@@ -4,11 +4,13 @@ import {
   FieldError,
   Label,
   TextField,
+  TextAreaField,
   Submit,
 } from '@redwoodjs/forms'
 
 const PostForm = (props) => {
   const onSubmit = (data) => {
+    console.log('%c [data]', 'color:orange; background: purple', data)
     props.onSave(data, props?.post?.id)
   }
 
@@ -45,7 +47,7 @@ const PostForm = (props) => {
         >
           Body
         </Label>
-        <TextField
+        <TextAreaField
           name="body"
           defaultValue={props.post?.body}
           className="rw-input"
@@ -69,6 +71,21 @@ const PostForm = (props) => {
           validation={{ required: true }}
         />
         <FieldError name="a11yLink" className="rw-field-error" />
+
+        <Label
+          name="youtubeUrl"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Youtube URL
+        </Label>
+        <TextField
+          name="youtubeUrl"
+          defaultValue={props.post?.youtubeUrl}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+        <FieldError name="youtubeUrl" className="rw-field-error" />
 
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">

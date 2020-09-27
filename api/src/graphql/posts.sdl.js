@@ -5,6 +5,7 @@ export const schema = gql`
     body: String!
     a11yLink: String!
     createdAt: DateTime!
+    youtubeUrl: String
   }
 
   type Query {
@@ -16,12 +17,14 @@ export const schema = gql`
     title: String!
     body: String!
     a11yLink: String!
+    youtubeUrl: String
   }
 
   input UpdatePostInput {
     title: String
     body: String
     a11yLink: String
+    youtubeUrl: String
   }
 
   type Mutation {

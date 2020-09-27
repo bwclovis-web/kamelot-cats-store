@@ -2,7 +2,7 @@ datasource DS {
   // optionally set multiple providers
   // example: provider = ["sqlite", "postgresql"]
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 generator client {
@@ -15,6 +15,6 @@ model Post {
   title      String
   body       String
   a11yLink   String
-  youtubeUrl String?
+  youtubeUrl String
   createdAt  DateTime @default(now())
 }

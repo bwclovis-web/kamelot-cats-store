@@ -9,6 +9,7 @@ export const QUERY = gql`
       title
       body
       a11yLink
+      youtubeUrl
       createdAt
     }
   }

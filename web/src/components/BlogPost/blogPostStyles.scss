@@ -1,6 +1,13 @@
 @import 'src/global/styles/variables.scss';
 
 .kc-post {
+  iframe {
+    height: 500px;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 40px;
+  }
 
   &.single-post {
     header {
@@ -33,6 +40,7 @@
     background-image: url('http://placeimg.com/1000/480/animals');
     background-size: cover;
     background-position: center;
+    width: 100%;
 
     &:last-child {
       margin-right: 0;
@@ -60,6 +68,11 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          padding: 0 20px;
+
+          .heading {
+            line-height: 1.1;
+          }
         }
 
         .content-clamp {

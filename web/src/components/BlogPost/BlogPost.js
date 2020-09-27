@@ -29,6 +29,9 @@ const BlogPost = ({ post, singlePost }) => {
           )}
         </header>
         <div className={contentContainerClasses}>
+          {post.youtubeUrl && (
+            <div dangerouslySetInnerHTML={{ __html: post.youtubeUrl }} />
+          )}
           <div
             className="content-clamp"
             dangerouslySetInnerHTML={createMarkup()}
