@@ -1,0 +1,42 @@
+@import 'src/global/styles/variables.scss';
+
+.kc-modal {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &_overlay {
+    background-color: rgba(black, 0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+  }
+
+  &_content {
+    padding: 0;
+    position: relative;
+    background-color: gray;
+    border-radius: $default-radus;
+    border: 1px solid darken(gray, 20%);
+    box-shadow: 0 0 10px rgba(black, 0.4);
+    max-width: 800px;
+    width: 30%;
+  }
+
+  &_controlls {
+    height: 20px;
+    margin-bottom: 30px;
+  }
+
+  &_close {
+    position: absolute;
+    right: 10px;
+    font-size: 2.0rem;
+    color: white;
+    padding: 10px;
+  }
+}
