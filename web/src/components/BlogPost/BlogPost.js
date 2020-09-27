@@ -1,29 +1,51 @@
 import { Link, routes } from '@redwoodjs/router'
 import './blogPostStyles.scss'
+import classNames from 'classnames'
 
 const BlogPost = ({ post, singlePost }) => {
-  console.log('%c [post]', 'color:orange; background: purple', post)
-  // const renderHeading = () => {
-  //   let template
+  const postClasses = classNames({
+    'kc-post': true,
+    'post-grid': !singlePost,
+    'single-post': singlePost,
+  })
 
-  //   if (singlePost) {
-  //     template = <h2>{post.title}</h2>
-  //   } else {
-  //     template = <Link to={routes.blogPost({ id: post.id })}>{post.title}</Link>
-  //   }
-  //   return template
-  // }
+  const contentContainerClasses = classNames({
+    'kc-post_content': true,
+    container: singlePost,
+  })
+
+  const createMarkup = () => {
+    return { __html: post.body }
+  }
 
   return (
-    <article>
-      <header>
-        <h2 className="heading">{post.title}</h2>
-      </header>
-      <p>{post.body}</p>
-      <footer>
+    <article className={postClasses}>
+      <div className="kc-post_content-container">
+        <header>
+          {singlePost ? (
+            <h1 className="heading container">{post.title}</h1>
+          ) : (
+            <h2 className="heading">{post.title}</h2>
+          )}
+        </header>
+        <div className={contentContainerClasses}>
+          <div
+            className="content-clamp"
+            dangerouslySetInnerHTML={createMarkup()}
+          />
+          {singlePost && <Link to={routes.blog()}>Back to blog page</Link>}
+        </div>
+        {!singlePost && (
+          <Link className="kc-post_link" to={routes.blogPost({ id: post.id })}>
+            Read More
+            <span className="visually-hidden">about {post.a11yLink}</span>
+          </Link>
+        )}
+      </div>
+      {/* <footer className="kc-post_footer">
         {post.createdAt}
         {singlePost && <Link to={routes.blog()}>Back to blog page</Link>}
-      </footer>
+      </footer> */}
     </article>
   )
 }

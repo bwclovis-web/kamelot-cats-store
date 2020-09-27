@@ -1,0 +1,107 @@
+@import 'src/global/styles/variables.scss';
+
+.kc-post {
+
+  &.single-post {
+    header {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('http://placeimg.com/1000/480/animals');
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+      color: wheat;
+      margin-bottom: 40px;
+
+      .heading {
+        font-size: 9.4rem;
+      }
+    }
+    p {
+      font-size: 1.8rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+  }
+
+  &.post-grid {
+    margin-bottom: 60px;
+    height: 200px;
+    border: 1px solid #333;
+    box-shadow: 0 0 10px 0 rgba(black, 0.1);
+    border-radius: $default-radus;
+    background-image: url('http://placeimg.com/1000/480/animals');
+    background-size: cover;
+    background-position: center;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .kc-post_content {
+      height: 100%;
+      width: 90%;
+      background-color: rgba(cyan, 0.8);
+      align-items: center;
+      padding: 0 20px;
+      display: flex;
+
+      &-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+
+        header {
+          width: 30%;
+          flex: 0 0 auto;
+          background-image: linear-gradient(to right, cyan, rgba(cyan, 0.8));
+          height: inherit;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .content-clamp {
+          position: relative;
+          overflow: hidden;
+          max-height: 90px;
+          width: 100%;
+
+          &:before {
+            position: absolute;
+            content: "...";
+            inset-block-end: 0;
+            inset-inline-end: 0;
+            font-size: 2rem;
+          }
+
+          &:after {
+            content: "";
+            position: absolute;
+            inset-inline-end: 0; /* "right" */
+            width: 2rem;
+            height: 2rem;
+            background: white;
+          }
+        }
+      }
+    }
+
+    .kc-post_link {
+      width: 16%;
+      background-image: linear-gradient(to right, rgba(cyan, 0.8),cyan);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 10px;
+      transition: background-color .3s ease-in;
+
+      &:hover {
+        border-bottom: 0;
+        background-color: cyan;
+      }
+    }
+  }
+}

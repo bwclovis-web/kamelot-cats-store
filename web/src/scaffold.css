@@ -135,6 +135,9 @@
   font-size: 1.4rem;
   margin-top: -1rem;
 }
+.rw-form-wrapper #body{
+  height: 50vh;
+}
 .rw-form-error-wrapper {
   padding: 1rem;
   background-color: #fff5f5;

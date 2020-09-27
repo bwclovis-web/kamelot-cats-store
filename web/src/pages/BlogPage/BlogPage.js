@@ -5,8 +5,10 @@ import BlogPostsCell from 'src/components/BlogPostsCell'
 const BlogPage = () => {
   return (
     <PageLayout>
-      <h1>BlogPage</h1>
-      <BlogPostsCell />
+      <h1 className="container heading">Latest Articles</h1>
+      <section className="container container-flex">
+        <BlogPostsCell />
+      </section>
     </PageLayout>
   )
 }
